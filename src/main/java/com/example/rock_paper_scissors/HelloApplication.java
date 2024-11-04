@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 public class HelloApplication extends Application {
     private TextField userSelection = new TextField();
     private TextField randomSelection = new TextField();
+    private TextField winner = new TextField();
     private Button playBt = new Button("PLAY!");
 
     @Override
@@ -35,6 +36,8 @@ public class HelloApplication extends Application {
         gridPane.add(userSelection, 1, 0);
         gridPane.add(new Label("Random selection: "), 0, 1);
         gridPane.add(randomSelection, 1,1);
+        gridPane.add(new Label("Winner"), 0, 2);
+        gridPane.add(winner, 1, 2);
 
         // Place introduction and text fields in border pane
         BorderPane pane = new BorderPane();
