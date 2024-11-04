@@ -49,7 +49,6 @@ public class HelloApplication extends Application {
         // Process events
         playBt.setOnAction(e -> playGame());
 
-
         // Place introduction and text fields in border pane
         BorderPane pane = new BorderPane();
         pane.setTop(new Label(introduction));
@@ -95,7 +94,7 @@ public class HelloApplication extends Application {
         return sysElection;
     }
 
-    public static String winner(String sysElection, String userElection) {
+    private String winner(String sysElection, String userElection) {
         String winner;
         winner = switch (sysElection){
             case "PAPER" -> paperBeats(userElection)?
@@ -112,15 +111,15 @@ public class HelloApplication extends Application {
         return winner;
     }
 
-    public static boolean paperBeats(String RPS) {
+    private boolean paperBeats(String RPS) {
         return RPS.equalsIgnoreCase( "ROCK");
     }
 
-    public static boolean scissorsBeats(String RPS) {
+    private boolean scissorsBeats(String RPS) {
         return RPS.equalsIgnoreCase( "PAPER");
     }
 
-    public static boolean rockBeats(String RPS) {
+    private boolean rockBeats(String RPS) {
         return RPS.equalsIgnoreCase("SCISSORS");
     }
 }
