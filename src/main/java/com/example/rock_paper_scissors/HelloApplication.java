@@ -16,7 +16,7 @@ public class HelloApplication extends Application {
     private TextField randomSelection = new TextField();
     private TextField winnerText = new TextField();
     private Button playBt = new Button("PLAY!");
-    private RockPaperScissorsLogic gameLogic;
+    private RockPaperScissorsLogic gameLogic = new RockPaperScissorsLogic();
 
     @Override
     public void start(Stage stage) {
@@ -64,12 +64,16 @@ public class HelloApplication extends Application {
 
     public void playGame() {
         // Get values from text fields
-        gameLogic = new RockPaperScissorsLogic();
+        String sysElection = gameLogic.getSysElection();
         String userInput = userSelection.getText();
         gameLogic.setUserElection(userInput);
-        String sysElection = gameLogic.getRandomElection();
+        String winner;
+
+        String userElection = gameLogic.getUserElection();
+
         gameLogic.setWinner(sysElection, userInput);
-        String winner = gameLogic.getWinner();
+        winner = gameLogic.getWinner();
+
         userSelection.setText(gameLogic.getUserElection());
         randomSelection.setText(sysElection);
         winnerText.setText(winner);

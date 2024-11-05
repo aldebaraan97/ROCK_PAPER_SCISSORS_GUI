@@ -2,13 +2,11 @@ package com.example.rock_paper_scissors;
 
 public class RockPaperScissorsLogic {
     private String userElection;
-    private String sysElection;
+    private String sysElection = getRandomElection();
     private String winner;
 
     /** Construct a game logic */
     public RockPaperScissorsLogic() {
-//        this.userElection = userElection;
-//        this.sysElection = sysElection;
     }
 
     /** Get user election */
@@ -16,18 +14,14 @@ public class RockPaperScissorsLogic {
         return userElection;
     }
 
-    /** Set user election */
+    /** Set user election */ // you need to capture this result
     public void setUserElection(String userInput){
-        String input = userInput;
-        String userElection;
-
-        userElection = switch (input.toUpperCase()) {
+        this.userElection = switch (userInput.toUpperCase()) {
             case "PAPER" -> "PAPER";
             case "ROCK" -> "ROCK";
             case "SCISSORS" -> "SCISSORS";
             default -> getRandomElection();
         };
-        this.userElection = userElection;
     }
 
     /** Get system election */
