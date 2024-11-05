@@ -64,14 +64,14 @@ public class HelloApplication extends Application {
 
     public void playGame() {
         // Get values from text fields
+        String winner;
+        gameLogic.setSysElection();
         String sysElection = gameLogic.getSysElection();
         String userInput = userSelection.getText();
         gameLogic.setUserElection(userInput);
-        String winner;
-
         String userElection = gameLogic.getUserElection();
 
-        gameLogic.setWinner(sysElection, userInput);
+        gameLogic.setWinner(sysElection, userElection);
         winner = gameLogic.getWinner();
 
         userSelection.setText(gameLogic.getUserElection());

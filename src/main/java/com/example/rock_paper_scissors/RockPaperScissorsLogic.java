@@ -2,7 +2,7 @@ package com.example.rock_paper_scissors;
 
 public class RockPaperScissorsLogic {
     private String userElection;
-    private String sysElection = getRandomElection();
+    private String sysElection;
     private String winner;
 
     /** Construct a game logic */
@@ -27,6 +27,11 @@ public class RockPaperScissorsLogic {
     /** Get system election */
     public String getSysElection() {
         return sysElection;
+    }
+
+    /** Set a new system election */
+    public void setSysElection() {
+        this.sysElection = getRandomElection();
     }
 
     /** Get winner */
